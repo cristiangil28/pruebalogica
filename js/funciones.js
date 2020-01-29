@@ -43,14 +43,16 @@ function getOcurrencias() {
     var myArray = [1, 2, 2, 4, 5, 6, 7, 8, 8, 8];
     var repetidos = [];
     var numRepetido =0;
+    var vecesReepetido = 0;
     myArray.forEach(function (numero) {
         repetidos[numero] = (repetidos[numero] || 0) + 1;
         
-        if (myArray[numero] > numRepetido) {
-            numRepetido = myArray[numero];
+        if (repetidos[numero] > vecesReepetido) {
+            numRepetido = numero ;
+            vecesReepetido = repetidos[numero]
         }
     });
-    document.getElementById('ocurrencias').innerHTML = "El valor que mas se repite es:"+numRepetido;
+    document.getElementById('ocurrencias').innerHTML = "El valor que mas se repite es: "+numRepetido+" , las veces qye se repite son: "+vecesReepetido;
 }
 mostrarArray();
 
